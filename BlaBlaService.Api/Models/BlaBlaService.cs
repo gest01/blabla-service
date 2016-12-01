@@ -23,7 +23,6 @@ namespace BlaBlaService.Api.Models
 
             HttpContent content = new FormUrlEncodedContent(values);
 
-            HttpClient _http = new HttpClient();
             var response = await _http.PostAsync(ConfigurationManager.AppSettings["BlaBlaMeterUrl"], content);
             var result = await response.Content.ReadAsStringAsync();
 
